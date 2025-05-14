@@ -241,14 +241,7 @@ with st.container(border=True, key="container"):
                                 justify-content: center;
                                 align-items: center;
                             }
-                            .markmap-foreign{
-                                display: flex;
-                                flex-wrap: wrap;
-                            }                    
-
-                            foreignObject div {
                             
-                            }
     
                             </style>
                         </head>
