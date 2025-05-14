@@ -234,7 +234,7 @@ with st.container(border=True, key="container"):
                                 z-index: 1000;
                             }
                             
-                            .exportButton {
+                            #exportButton {
                                 position: absolute;
                                 top: 10px;
                                 right: 10px;
