@@ -207,7 +207,7 @@ with st.container(border=True, key="container"):
                             <style>
                             svg.markmap {
                                 width: 100%;
-                                height: 100vh;
+                                height: 150vh;
                                 background-color: white;
                             }
                             
@@ -235,7 +235,7 @@ with st.container(border=True, key="container"):
 
                             #mindmap-container {
                                 height: calc(100% - 35px);
-                                width: 100%;
+                                width: 400px;
                                 transition: transform 0.3s ease;
                                 display: flex;
                                 justify-content: center;
