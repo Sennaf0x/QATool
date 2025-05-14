@@ -254,6 +254,7 @@ with st.container(border=True, key="container"):
                         </head>
                         <body>
                             <button id="fullscreen-button">Tela cheia</button>
+                            <button id="exportButton">Export as PNG</button>
                             <div id="mindmap-container" class="markmap node">
                                 <script type="text/template">
                                     ---
@@ -291,6 +292,15 @@ with st.container(border=True, key="container"):
                             });
                             
                             document.addEventListener('fullscreenchange', updateButtonLabel);
+                            
+                            document.getElementById('exportButton').addEventListener('click', function() {
+                            html2canvas(document.querySelector("#mindmap-container"), {scale: 5}).then(canvas => {
+                            var link = document.createElement('a');''' + f'''
+                            link.download = 'mindmap.png';''' + '''
+                            link.href = canvas.toDataURL();
+                            link.click();
+                            });
+                            });
                         </script>
                         </body>
                         </html>
