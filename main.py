@@ -165,13 +165,13 @@ with st.expander('Gerador de mindmap', expanded=True):
 
                                 # Raid Tracker  Hourly Check  Add color labels to Hourly Check page 
                                 ## Positive scenario (Happy path)
-                                ### The user accessed the ‘time check’ screen and viewed the initial settings.
+                                ### The user accessed the ‘hourly check’ page and viewed the initial settings.
                                  - Validate that when the user starts the hourly check page, all times will be specified initially.
                                  - Validate that when the user starts the hourly check page, times that do not have errors will remain without a background color and black letters.
                                  - Validate that when the user starts the hourly check page and views a time that has 'errors', the background color of that time should be red with white letters.
                                  - Validate that when the user starts the hourly check page, an initially empty filter field with a drop-down menu will be selected and will have two options:
                                   - Options: 'all' and 'Failure'
-                                ### The user wants to filter a specific group of schedules.
+                                ### The user wants to filter a specific group of schedules on hourly check page.
                                  - Validate that when the user selects the 'Failed' option in the filter field dropdown menu, only the values ​​with failures will be displayed.
                                  - Validate that when the user selects the 'All' option in the filter field dropdown menu, all values ​​will be displayed.
                                 ## Alternative Scenario
