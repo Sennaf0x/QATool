@@ -12,7 +12,7 @@ if "question" not in st.session_state:
     st.session_state.question = ""
 
 if "system" not in st.session_state:
-    st.session_state.system = "Você é um analista da qualidade de software senior e está encarregado de formular perguntas para estudantes"
+    st.session_state.system = "You are a senior software quality analyst and are in charge of formulating questions for students."
 
 if "html_markdown" not in st.session_state:
     st.session_state.html_markdown = ""
@@ -31,25 +31,25 @@ if "imagem" not in st.session_state:
 
 if "descricao" not in st.session_state:
     st.session_state.descricao = '''
-                                # Tópico Principal
-                                ## Subtópico 1
-                                 - Ponto 1
-                                  - Detalhe 1
-                                  - Detalhe 2
-                                 - Ponto 2
-                                ## Subtópico 2
-                                 - Ponto 1
-                                 - Ponto 2
-                                  - Detalhe 1
-                                    - Subdetalhe 1
-                                    - Subdetalhe 2
-                                ## Subtópico 3
-                                 - Ponto 1
-                                 - Ponto 2
-                                 - Ponto 3
-                                ## Conclusão
-                                 - Resumo dos tópicos
-                                 - Considerações finais
+                                # Main Topic
+                                ## Subtopic 1
+                                 - Point 1
+                                  - Detail 1
+                                  - Detail 2
+                                 - Point 2
+                                ## Subtopic 2
+                                 - Point 1
+                                 - Point 2
+                                  - Detail 1
+                                   - Subdetail 1
+                                   - Subdetail 2
+                                ## Subtopic 3
+                                 - Point 1
+                                 - Point 2
+                                 - Point 3
+                                ## Conclusion
+                                 - Summary of topics
+                                 - Final considerations
                                 '''
 
 if "answer" not in st.session_state:
@@ -127,14 +127,15 @@ with st.expander('Gerador de mindmap', expanded=True):
                 if gerar_conteudo:
                     system = st.session_state.system
                     prompt =f'''
-                            Quero aprender sobre o texto abaixo: 
-                                    {assunto}
-                            Você é um programa que cria mindmaps utilizando o markmap e escreve somente texto em markdown seguindo o exemplo abaixo:
-                            Definições
-                                O caminho feliz é o fluxo de interação ideal que um usuário segue para completar uma tarefa ou objetivo sem encontrar erros, problemas ou exceções. Em geral, esse é o fluxo mais direto e frequentemente é o comportamento mais desejado e esperado do sistema.
-                                O caminho alternativo é qualquer fluxo de interação que se desvia do caminho feliz. Isso inclui cenários onde os usuários podem encontrar erros, realizar ações diferentes ou seguir decisões alternativas ao longo do processo.
+                            I want to learn about the text below:
+                                {assunto}
+                                You are a program that creates mind maps using markmap and writes only text in markdown following the example below:
                             
-                            Exemplo de input
+                            Definitions
+                                The happy path is the ideal interaction flow that a user follows to complete a task or goal without encountering errors, problems, or exceptions. In general, this is the most direct flow and is often the most desired and expected behavior of the system.
+                                The alternative path is any interaction flow that deviates from the happy path. This includes scenarios where users may encounter errors, take different actions, or follow alternative decisions throughout the process.
+
+                            Example of input
 
                                 Scenario 1: Yield Value has no FAIL 
 
@@ -160,7 +161,8 @@ with st.expander('Gerador de mindmap', expanded=True):
 
                                 Then the table should display only tester lines where there is at least one FAIL (warning/red rows), the tester lines with 100% yield must not be exhibited
                             
-                            Exemplo de saida
+                            Example of output
+
                                 # Raid Tracker  Hourly Check  Add color labels to Hourly Check page 
                                 ## Cenário Positivo (Caminho Feliz)
                                 ### O usuário acessa a tela de 'hourly check' e visualiza as configurações iniciais.
@@ -184,12 +186,12 @@ with st.expander('Gerador de mindmap', expanded=True):
                     if assunto != "":
                         
                         system = '''
-                                    Você é um desenvolvedor que só responde em através de linguagem markdown.
-                                     exemplo = #topico ##Subtopico
+                                    You are a developer who only responds using markdown language. 
+                                    Example = #topic ##Subtopic
                                  '''
                         prompt = f'''
-                                    Crie um resumo sobre o assunto abaixo:
-                                    assunto = {assunto}
+                                    Create a summary about the topic below: 
+                                    topic = {assunto}
                                   '''
                         st.session_state.conteudo = ask_openai(system, assunto, prompt)
                         
