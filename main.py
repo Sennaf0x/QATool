@@ -247,7 +247,7 @@ with st.container(border=True, key="container"):
                             }                    
 
                             foreignObject div {
-                                width:400px;
+                            
                             }
     
                             </style>
