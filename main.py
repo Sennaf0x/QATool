@@ -243,7 +243,7 @@ with st.container(border=True, key="container"):
                                 color: white;
                                 border: none;
                                 cursor: pointer;
-                                z-index: 900;
+                                z-index: 700;
                             }
                             
                             body, html {
