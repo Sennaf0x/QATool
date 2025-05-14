@@ -236,8 +236,8 @@ with st.container(border=True, key="container"):
                             
                             #exportButton {
                                 position: absolute;
-                                top: 20px;
-                                right: 20px;
+                                top: 10px;
+                                right: 50px;
                                 padding: 10px;
                                 background-color: rgba(207,1,59);
                                 color: white;
