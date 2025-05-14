@@ -205,14 +205,11 @@ with st.container(border=True, key="container"):
                             <title>Markmap</title>
                             <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.16"></script>
                             <style>
-                            svg.markmap {
-                                width: 100%;
-                                height: 150vh;
-                                background-color: white;
-                            }
-                            
-                            .node{
+                            .node {
                                 margin: 10px;
+                                display: flex; 
+                                flex-wrap: wrap;
+                                max-width: 400px;
                             }
                             
                             #fullscreen-button {
@@ -220,7 +217,7 @@ with st.container(border=True, key="container"):
                                 top: 10px;
                                 right: 10px;
                                 padding: 10px;
-                                background-color: rgba(207,1,59);
+                                background-color: rgba(207, 1, 59);
                                 color: white;
                                 border: none;
                                 cursor: pointer;
@@ -241,12 +238,13 @@ with st.container(border=True, key="container"):
                                 justify-content: center;
                                 align-items: center;
                             }
-                            .markmap-foreign {
-                                width: 600px;
-                                margin: 5px;
-                            }
 
-                            
+                            .markmap-foreign {
+                                width: auto;
+                                margin: 5px;
+                                max-width: 100%;
+                                overflow-wrap: break-word;
+                            }
                             </style>
                         </head>
                         <body>
