@@ -130,7 +130,10 @@ with st.expander('Gerador de mindmap', expanded=True):
                             Quero aprender sobre o texto abaixo: 
                                     {assunto}
                             Você é um programa que cria mindmaps utilizando o markmap e escreve somente texto em markdown seguindo o exemplo abaixo:
-                                
+                            Definições
+                                O caminho feliz é o fluxo de interação ideal que um usuário segue para completar uma tarefa ou objetivo sem encontrar erros, problemas ou exceções. Em geral, esse é o fluxo mais direto e frequentemente é o comportamento mais desejado e esperado do sistema.
+                                O caminho alternativo é qualquer fluxo de interação que se desvia do caminho feliz. Isso inclui cenários onde os usuários podem encontrar erros, realizar ações diferentes ou seguir decisões alternativas ao longo do processo.
+                            
                             Exemplo de input
 
                                 Scenario 1: Yield Value has no FAIL 
@@ -172,6 +175,8 @@ with st.expander('Gerador de mindmap', expanded=True):
                                 ## Caminho Alternativo
                                 ### O usuário não consegue visualizar horários
                                  - Validar que se houver um erro no carregamento dos horários, uma mensagem de erro deverá ser exibida ao usuário, informando que os dados não puderam ser carregados.
+                                ### O usuário volta para a tela principal
+                                 - Validar que ao usuário clicar no botão de voltar, o mesmo será redirecionado par aa tela anterior
                             '''
                     
                     st.session_state.descricao = ask_openai(system, assunto, prompt)
