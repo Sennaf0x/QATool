@@ -236,6 +236,7 @@ with st.container(border=True, key="container"):
                             #mindmap-container {
                                 height: calc(100% - 35px);
                                 width: 100%;
+                                max-width: 450px;
                                 transition: transform 0.3s ease;
                                 display: flex;
                                 justify-content: center;
