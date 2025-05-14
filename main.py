@@ -113,7 +113,7 @@ def ask_openai(system, assunto, prompt):
         print(f"Erro inesperado: {e}")
         return None
 
-with st.expander('Gerador de pergunta', expanded=True):
+with st.expander('Gerador de mindmap', expanded=True):
         #st.write('''
         #        <h2 class="cor">Gerador</h2>
         #        ''',unsafe_allow_html=True)
@@ -129,7 +129,49 @@ with st.expander('Gerador de pergunta', expanded=True):
                     prompt =f'''
                             Quero aprender sobre o texto abaixo: 
                                     {assunto}
-                            Item 1 - Você é um programa que cria mindmaps utilizando o markmap e escreve somente texto em markdown
+                            Você é um programa que cria mindmaps utilizando o markmap e escreve somente texto em markdown seguindo o exemplo abaixo:
+                                
+                            Exemplo de input
+
+                                Scenario 1: Yield Value has no FAIL 
+
+                                Given an hourly check value that has no FAIL
+                                When the table is rendered,
+                                Then values are colored black by default to indicate the Yield is 100%
+
+                                Scenario 2: Yield Value has a FAIL 
+                                Given an hourly check value that has at least one FAIL
+                                When the table is rendered,
+                                Then values are highlighted (rectangular section with rounded corners) with a warning color (e.g., red) to indicate the Yield is less than 100%.
+
+                                Scenario 3: Dropdown Hourly Check
+
+                                Given that I see a dropdown filter is available above the hourly check table
+                                When I select the dropdown
+                                Then I see the dropdown with "All" selected by default, and the table should display all the data together.
+
+                                Scenario 4: Filtering Yield Values via Dropdown
+
+                                Given that I see a dropdown filter is available above the hourly check table
+                                When I select "Failed" from the dropdown
+
+                                Then the table should display only tester lines where there is at least one FAIL (warning/red rows), the tester lines with 100% yield must not be exhibited
+                            
+                            Exemplo de saida
+                                # Raid Tracker  Hourly Check  Add color labels to Hourly Check page 
+                                ## Cenário Positivo (Caminho Feliz)
+                                ### O usuário acessa a tela de 'hourly check' e visualiza as configurações iniciais.
+                                 - Validar que ao usuário iniciar a tela todos os horários serão exibidos inicialmente.
+                                 - Validar que ao usuário iniciar a tela os horários que não possuem falhas permanecerão sem cor de fundo e letras pretas.
+                                 - Validar que ao usuário iniciar a tela e visualizar um horário que possua 'falhas', a cor do fundo desse horário deverá estar vermelha com letras brancas.
+                                 - Validar que ao usuário iniciar a tela, um campo inicialmente vazio de filtro com dropdown será exibido e terá duas opções:
+                                  - Opções: 'all' e 'Failed'
+                                ### O usuário deseja filtrar um determinado grupo de horários.
+                                 - Validar que ao usuário selecionar a opção 'Failed' no menu dropdown do campo de filtro, serão exibidos somente os valores com falhas.
+                                 - Validar que ao usuário selecionar a opção 'All' no menu dropdown do campo de filtro, todos os valores sejam exibidos. 
+                                ## Caminho Alternativo
+                                ### O usuário não consegue visualizar horários
+                                 - Validar que se houver um erro no carregamento dos horários, uma mensagem de erro deverá ser exibida ao usuário, informando que os dados não puderam ser carregados.
                             '''
                     
                     st.session_state.descricao = ask_openai(system, assunto, prompt)
