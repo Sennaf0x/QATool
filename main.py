@@ -242,7 +242,8 @@ with st.container(border=True, key="container"):
                                 align-items: center;
                             }
                             .markmap-foreign {
-                                width: 350px;
+                                width: 400px;
+                                margin: 5px;
                             }
 
                             
