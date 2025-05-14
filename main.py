@@ -241,6 +241,10 @@ with st.container(border=True, key="container"):
                                 justify-content: center;
                                 align-items: center;
                             }
+                            .markmap-foreign {
+                                width: 350px;
+                            }
+
                             
                             </style>
                         </head>
