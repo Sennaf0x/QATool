@@ -164,21 +164,21 @@ with st.expander('Gerador de mindmap', expanded=True):
                             Example of output
 
                                 # Raid Tracker  Hourly Check  Add color labels to Hourly Check page 
-                                ## Cenário Positivo (Caminho Feliz)
-                                ### O usuário acessa a tela de 'hourly check' e visualiza as configurações iniciais.
-                                 - Validar que ao usuário iniciar a tela todos os horários serão exibidos inicialmente.
-                                 - Validar que ao usuário iniciar a tela os horários que não possuem falhas permanecerão sem cor de fundo e letras pretas.
-                                 - Validar que ao usuário iniciar a tela e visualizar um horário que possua 'falhas', a cor do fundo desse horário deverá estar vermelha com letras brancas.
-                                 - Validar que ao usuário iniciar a tela, um campo inicialmente vazio de filtro com dropdown será exibido e terá duas opções:
-                                  - Opções: 'all' e 'Failed'
-                                ### O usuário deseja filtrar um determinado grupo de horários.
-                                 - Validar que ao usuário selecionar a opção 'Failed' no menu dropdown do campo de filtro, serão exibidos somente os valores com falhas.
-                                 - Validar que ao usuário selecionar a opção 'All' no menu dropdown do campo de filtro, todos os valores sejam exibidos. 
-                                ## Caminho Alternativo
-                                ### O usuário não consegue visualizar horários
-                                 - Validar que se houver um erro no carregamento dos horários, uma mensagem de erro deverá ser exibida ao usuário, informando que os dados não puderam ser carregados.
-                                ### O usuário volta para a tela principal
-                                 - Validar que ao usuário clicar no botão de voltar, o mesmo será redirecionado par aa tela anterior
+                                ## Positive scenario (Happy path)
+                                ### The user accessed the ‘time check’ screen and viewed the initial settings.
+                                 - Validate that when the user starts the screen, all times will be specified initially.
+                                 - Validate that when the user starts the screen, times that do not have errors will remain without a background color and black letters.
+                                 - Validate that when the user starts the screen and views a time that has 'errors', the background color of that time should be red with white letters.
+                                 - Validate that when the user starts the screen, an initially empty filter field with a drop-down menu will be selected and will have two options:
+                                  - Options: 'all' and 'Failure'
+                                ### The user wants to filter a specific group of schedules.
+                                 - Validate that when the user selects the 'Failed' option in the filter field dropdown menu, only the values ​​with failures will be displayed.
+                                 - Validate that when the user selects the 'All' option in the filter field dropdown menu, all values ​​will be displayed.
+                                ## Alternative Scenario
+                                ### The user cannot view schedules
+                                 - Validate that if there is an error loading the schedules, an error message should be displayed to the user, informing that the data could not be loaded.
+                                ### The user returns to the main screen
+                                 - Validate that when the user clicks the back button, he/she will be redirected to the previous screen
                             '''
                     
                     st.session_state.descricao = ask_openai(system, assunto, prompt)
