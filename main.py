@@ -234,6 +234,18 @@ with st.container(border=True, key="container"):
                                 z-index: 1000;
                             }
                             
+                            .exportButton {
+                                position: absolute;
+                                top: 10px;
+                                right: 10px;
+                                padding: 10px;
+                                background-color: rgba(207,1,59);
+                                color: white;
+                                border: none;
+                                cursor: pointer;
+                                z-index: 1000;
+                            }
+                            
                             body, html {
                                 margin: 0;
                                 height: 100%;
@@ -292,7 +304,7 @@ with st.container(border=True, key="container"):
                             });
                             
                             document.addEventListener('fullscreenchange', updateButtonLabel);
-                            
+
                             document.getElementById('exportButton').addEventListener('click', function() {
                             html2canvas(document.querySelector("#mindmap-container"), {scale: 5}).then(canvas => {
                             var link = document.createElement('a');''' + f'''
