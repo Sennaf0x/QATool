@@ -245,6 +245,10 @@ with st.container(border=True, key="container"):
                                 display: flex;
                                 flex-wrap: wrap;
                             }                    
+
+                            foreignObject div {
+                                width:400px;
+                            }
     
                             </style>
                         </head>
