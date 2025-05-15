@@ -263,6 +263,8 @@ with st.container(border=True, key="container"):
                             
     
                             </style>
+                            <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.16"></script>
+                            <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
                         </head>
                         <body>
                             <button id="fullscreen-button">Tela cheia</button>
