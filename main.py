@@ -122,7 +122,7 @@ with st.expander('Gerador de mindmap', expanded=True):
             titulo = st.input_text("Nome da estória")
             gerar_conteudo = st.form_submit_button("Gerar conteúdo",use_container_width=True)
             
-            if assunto == "" or gerar_conteudo or :
+            if assunto == "" or gerar_conteudo:
                 st.warning("Adicione o assunto a ser abordado")
             else:    
                 if gerar_conteudo:
@@ -207,11 +207,15 @@ with st.container(border=True, key="container"):
                         <!DOCTYPE html>
                         <html lang="en">
                         <head>
+
                             <meta charset="UTF-8" />
                             <meta http-equiv="X-UA-Compatible" content="IE=edge" />
                             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                             <title>Markmap</title>
+                            
                             <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.16"></script>
+                            <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
                             <style>
                             svg.markmap {
                                 width: 100%;
@@ -264,8 +268,7 @@ with st.container(border=True, key="container"):
                             
     
                             </style>
-                            <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.16"></script>
-                            <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+                            
                         </head>
                         <body>
                             <button id="fullscreen-button">Tela cheia</button>
@@ -283,7 +286,7 @@ with st.container(border=True, key="container"):
                                 </script>
                             </div>
                         <script>
-                        
+
                             const fullscreenButton = document.getElementById('fullscreen-button');
                             const mindmapContainer = document.getElementById('mindmap-container');
                             
