@@ -119,7 +119,7 @@ with st.expander('Gerador de mindmap', expanded=True):
         #        ''',unsafe_allow_html=True)
         with st.form("assunto"):
             assunto = st.text_area("Insira aqui o assunto")
-            titulo = st.input_text("Nome da estória")
+            
             gerar_conteudo = st.form_submit_button("Gerar conteúdo",use_container_width=True)
             
             if assunto == "":
