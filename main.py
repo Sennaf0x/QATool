@@ -119,9 +119,10 @@ with st.expander('Gerador de mindmap', expanded=True):
         #        ''',unsafe_allow_html=True)
         with st.form("assunto"):
             assunto = st.text_area("Insira aqui o assunto")
+            titulo = st.input_text("Nome da estória")
             gerar_conteudo = st.form_submit_button("Gerar conteúdo",use_container_width=True)
             
-            if assunto == "" and gerar_conteudo:
+            if assunto == "" or gerar_conteudo or :
                 st.warning("Adicione o assunto a ser abordado")
             else:    
                 if gerar_conteudo:
@@ -282,6 +283,7 @@ with st.container(border=True, key="container"):
                                 </script>
                             </div>
                         <script>
+                        
                             const fullscreenButton = document.getElementById('fullscreen-button');
                             const mindmapContainer = document.getElementById('mindmap-container');
                             
